@@ -1,0 +1,71 @@
+{
+  "id": "541d6ef1-5c3b-45cc-a852-83e9497d2043",
+  "uid": "tempore-sit-non",
+  "type": "posts",
+  "data": {
+    "banner": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": "Placeholder image",
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1587905069134-008460d7a636?w=900&h=500&fit=crop"
+    },
+    "title": "reinvent rich interfaces",
+    "subtitle": "repurpose bleeding-edge synergies",
+    "author": "productize revolutionary web-readiness",
+    "content": [
+      {
+        "heading": "syndicate visionary eyeballs",
+        "body": [
+          {
+            "type": "paragraph",
+            "text": "Laboris enim ea labore exercitation reprehenderit eiusmod consectetur laboris et occaecat mollit. Velit non nostrud elit in pariatur sit. Proident anim ipsum id qui minim ex eu sunt cupidatat cillum nisi in veniam consectetur.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "heading": "seize clicks-and-mortar platforms",
+        "body": [
+          {
+            "type": "paragraph",
+            "text": "Non quis do nostrud amet ex. Consequat cupidatat adipisicing consectetur duis sit. Ipsum exercitation dolor proident Lorem in eiusmod tempor excepteur adipisicing nostrud reprehenderit nostrud cillum fugiat Lorem.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "heading": "productize innovative platforms",
+        "body": [
+          {
+            "type": "paragraph",
+            "text": "Adipisicing fugiat in incididunt aute mollit reprehenderit eu dolor ad sunt minim amet.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "heading": "exploit dot-com markets",
+        "body": [
+          {
+            "type": "paragraph",
+            "text": "Consectetur tempor dolore mollit labore cupidatat ullamco dolor pariatur duis occaecat irure pariatur non. Exercitation irure cillum sit Lorem tempor fugiat cupidatat magna in. Duis est laborum ut laborum mollit ut laboris quis velit irure nulla cupidatat reprehenderit consectetur ea.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "heading": "monetize killer blockchains",
+        "body": [
+          {
+            "type": "paragraph",
+            "text": "Deserunt incididunt consequat consectetur quis ipsum non reprehenderit aliqua adipisicing elit ad minim amet consectetur. Eiusmod in minim deserunt sit occaecat ex velit incididunt. Occaecat incididunt aliquip dolore amet non ea quis anim fugiat do cillum elit.",
+            "spans": []
+          }
+        ]
+      }
+    ]
+  }
+}
