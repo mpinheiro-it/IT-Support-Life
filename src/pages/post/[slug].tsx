@@ -1,4 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
+import { createClient } from '../../../prismicio';
 
 import { getPrismicClient } from '../../services/prismic';
 
@@ -26,7 +27,7 @@ interface PostProps {
   post: Post;
 }
 
-// export default function Post() {
+// export default function Post({post} : PostProps) {
 //   // TODO
 // }
 
@@ -38,8 +39,17 @@ interface PostProps {
 // };
 
 // export const getStaticProps = async context => {
-//   const prismic = getPrismicClient();
-//   const response = await prismic.getByUID(TODO);
+//   const client = createClient()
 
-//   // TODO
+//   const slug = context
+
+//   const response = await client.getAllByType('posts')
+
+//   const post = {
+//     slug
+//   }
+
+//   return {
+//     props: {post}
+//   }
 // };
