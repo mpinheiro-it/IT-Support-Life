@@ -31,25 +31,38 @@ interface PostProps {
 //   // TODO
 // }
 
-// export const getStaticPaths = async () => {
-//   const prismic = getPrismicClient();
-//   const posts = await prismic.query(TODO);
+export const getStaticPaths = async () => {
+  const client = createClient();
 
-//   // TODO
-// };
+  const posts = await client.getAllByType('posts');
 
-// export const getStaticProps = async context => {
-//   const client = createClient()
+  return {
+    paths: [
+      { params: { posts } }
+    ],
+    fallback: true // false or 'blocking'
+  };
+};
 
-//   const slug = context
 
-//   const response = await client.getAllByType('posts')
+export const getStaticProps = async context => {
+  const client = createClient();
+  
+  const slug = context
 
-//   const post = {
-//     slug
-//   }
+  const response = await client.getAllByType('posts')
 
-//   return {
-//     props: {post}
-//   }
-// };
+  const post = {
+    uid: response[0].uid,
+    first_publication_date: response[0].first_publication_date,
+    data: {
+      title: response[0].data.title,
+      subtitle: response[0].data.subtitle,
+      author: response[0].data.author
+    }
+  }
+  
+  return {
+    props: {post}
+  }
+};

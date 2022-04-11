@@ -1,5 +1,6 @@
 import { GetStaticProps } from 'next';
 import Head from "next/head";
+
 import { getPrismicClient } from '../services/prismic';
 import { createClient } from '../../prismicio'
 
@@ -28,11 +29,13 @@ interface HomeProps {
 export default function Home({ post }) {
   return (
     <>
+
      <Head>
       <title>{post.data.title}</title>
       </Head>
-
-    <h1>{post.data.title}</h1>    
+    
+    {/* <h1>{post.data.title}</h1>    */}
+     
     </>   
   )
 }
