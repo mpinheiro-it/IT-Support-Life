@@ -1,1 +1,47 @@
-//todo
+.homeContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.postContainer{
+
+    height: 100px;
+    width: 700px;   
+    color: lightgrey;
+
+    h2 {        
+        
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: var(--heading);
+        line-height: 34px;
+        
+        text-align: justify;
+        letter-spacing: -0.5px;
+    }
+
+    p {
+        font-weight: 400;
+        font-size: 1.1rem;
+        line-height: 22px;       
+
+        text-align: justify;
+        margin-top: 0.5rem;
+        color: var(--body);
+    }
+    
+}
+
+.dateContainer, .authorContainer {
+    display: inline-block;
+    margin-top: 1rem;
+    
+    span{
+        margin: 0.8rem;
+        color: var(--info)
+    }
+}
+
+
+
