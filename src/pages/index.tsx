@@ -27,33 +27,36 @@ interface HomeProps {
   postsPagination: PostPagination;
 }
 
-export default function Home({ post }) {
+export default function Home({ posts }) {
   return (
     <>
 
      <Head>
-      <title>{post.data.title}</title>
+      <title>IT Support Life</title>
       </Head>
     
     <div className={styles.homeContainer}>
-
-    
       <div className={styles.postContainer}>
-          <h2>{post.data.title}</h2>
-          <p>{post.data.subtitle}</p>  
 
-            <div className={styles.dateContainer}>
-              <Image src="/images/calendar.png" width="20" height="20" />
-              <span>{post.first_publication_date}</span>
-            </div> 
+          {posts.map(post => {
+            return(
+                <>
+                    <h2>{post.data.title}</h2>
+                    <p>{post.data.subtitle}</p>  
 
-            <div className={styles.authorContainer}>
-              <Image src="/images/user.png" width="20" height="20" />
-              <span>{post.data.author}</span>
-            </div> 
-          
-      </div>   
+                      <div className={styles.dateContainer}>
+                        <Image src="/images/calendar.png" width="20" height="20" />
+                        <span>{post.first_publication_date}</span>
+                      </div> 
 
+                      <div className={styles.authorContainer}>
+                        <Image src="/images/user.png" width="20" height="20" />
+                        <span>{post.data.author}</span>
+                    </div>        
+                </>)
+          })}
+      
+      </div> 
     </div>    
      
     </>   
@@ -66,25 +69,28 @@ export const getStaticProps = async () => {
 
   const response  = await client.getAllByType('posts')
 
-  const post = {
-    uid: response[0].uid,
-    first_publication_date: new Date(response[0].first_publication_date).toLocaleDateString('en-US', {
-      day: '2-digit',
-      month: 'short',
-      year: 'numeric'
-  }),
-    data: {
-      title: response[0].data.title,
-      subtitle: response[0].data.subtitle,
-      author: response[0].data.author,
-    }
-  }
+  const posts = response.map(post => {
+    
+    return {      
+        uid: post.uid,
+        first_publication_date: new Date(post.first_publication_date).toLocaleDateString('en-US', {
+          day: '2-digit',
+          month: 'short',
+          year: 'numeric'
+      }),
+        data: {
+          title: post.data.title,
+          subtitle: post.data.subtitle,
+          author: post.data.author,
+        }
+      }
+    }  
+  ) 
 
-  console.log(post)
   // const prismic = getPrismicClient();
   // const postsResponse = await prismic.query(TODO);
 
   return {
-    props: { post },
+    props: { posts },
   }
 };
