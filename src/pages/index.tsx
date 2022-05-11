@@ -7,6 +7,7 @@ import { createClient } from '../../prismicio'
 
 import commonStyles from '../styles/common.module.scss';
 import styles from './home.module.scss';
+import Link from 'next/link';
 
 interface Post {
   uid?: string;
@@ -41,7 +42,9 @@ export default function Home({ posts }) {
           {posts.map(post => {
             return(
                 <>
-                    <h2>{post.data.title}</h2>
+                <Link key={post.uid} href={`/post/${post.uid}`}>
+                    <a>{post.data.title}</a>
+                </Link> 
                     <p>{post.data.subtitle}</p>  
 
                       <div className={styles.dateContainer}>
@@ -52,7 +55,8 @@ export default function Home({ posts }) {
                       <div className={styles.authorContainer}>
                         <Image src="/images/user.png" width="20" height="20" />
                         <span>{post.data.author}</span>
-                    </div>        
+                    </div>   
+                    
                 </>)
           })}
       

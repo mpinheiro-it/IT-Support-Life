@@ -9,10 +9,12 @@
     height: 100px;
     width: 700px;   
     
-    h2 {        
-        
+    a {        
+        display: block;
+
         font-weight: 700;
         font-size: 1.5rem;
+        text-decoration: none;
         color: var(--heading);
         line-height: 34px;
         

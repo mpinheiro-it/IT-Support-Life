@@ -27,20 +27,28 @@ interface PostProps {
   post: Post;
 }
 
-// export default function Post({post} : PostProps) {
-//   // TODO
-// }
+export default function Post({post} : PostProps) {
+  return (
+    <>
+    <h1 className={styles.test}> Teste!</h1>
+    </>
+  )
+}
 
 export const getStaticPaths = async () => {
   const client = createClient();
 
-  const posts = await client.getAllByType('posts');
+  const posts = await client.getAllByType('posts');  
+
+  const paths = posts.map(post => {
+    return {
+      params: {slug: post.uid}
+    }
+  })
 
   return {
-    paths: [
-      { params: { posts } }
-    ],
-    fallback: true // false or 'blocking'
+    paths,
+    fallback: true
   };
 };
 
